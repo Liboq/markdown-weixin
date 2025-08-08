@@ -1,0 +1,37 @@
+{
+  "name": "wx-md",
+  "version": "0.1.0",
+  "description": "Markdown to WeChat-friendly HTML with page, code and typography themes (including MoDi).",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "wxmd": "dist/bin/wxmd.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts && tsup bin/wxmd.ts --format esm --banner.js='#!/usr/bin/env node'",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-highlight": "^7.0.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-footnotes": "^3.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.0",
+    "unist-util-visit": "^5.0.0",
+    "highlight.js": "^11.9.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,5 @@
+.hljs { display:block; overflow-x:auto; padding:0.5em; background:#000; color:#eaeaea }
+.hljs-keyword, .hljs-selector-tag, .hljs-title, .hljs-section, .hljs-deletion, .hljs-subst { color:#d2a6ff }
+.hljs-literal, .hljs-number, .hljs-name, .hljs-selector-id, .hljs-template-variable, .hljs-variable { color:#f7c873 }
+.hljs-string, .hljs-symbol, .hljs-bullet, .hljs-attribute, .hljs-addition { color:#9fea9f }
+.hljs-comment, .hljs-quote { color:#bcbcbc; font-style:italic }
