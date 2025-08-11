@@ -8,17 +8,22 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     nav: [
-      { text: '指南', link: '/guide/getting-started' },
-      { text: 'CLI', link: '/guide/cli' },
-      { text: 'API', link: '/guide/api' },
-      { text: '主题', link: '/guide/themes' },
-      { text: 'FAQ', link: '/faq' },
+      {
+        text: '文档',
+        items: [
+          { text: '📘 指南', link: '/guide/getting-started' },
+          { text: '🛠️ CLI', link: '/guide/cli' },
+          { text: '🧩 API', link: '/guide/api' },
+          { text: '🎨 主题', link: '/guide/themes' },
+          { text: '❓ FAQ', link: '/faq' }
+        ]
+      },
       { text: 'GitHub', link: 'https://github.com/cnych/markdown-weixin' }
     ],
     sidebar: {
       '/guide/': [
         {
-          text: '指南',
+          text: '📘 指南',
           items: [
             { text: '快速开始', link: '/guide/getting-started' },
             { text: '命令行 CLI', link: '/guide/cli' },
@@ -29,7 +34,7 @@ export default defineConfig({
       ],
       '/': [
         {
-          text: '文档',
+          text: '🗂️ 文档',
           items: [
             { text: '快速开始', link: '/guide/getting-started' },
             { text: 'FAQ', link: '/faq' }

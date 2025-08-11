@@ -80,3 +80,129 @@ body::before {
     border-radius: 10px;
   }
 }
+
+/*****************************************
+ Notebook-styled Navbar
+*****************************************/
+.VPNav {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.VPNavBar {
+  backdrop-filter: blur(0px);
+}
+.VPNavBarTitle .title {
+  color: var(--ink) !important;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
+}
+.VPNavBar .content .menu .item > a,
+.VPNavBarMenu .menu .item > a,
+.VPNavBarLinks .link {
+  color: var(--ink) !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: background-color .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+.VPNavBar .content .menu .item > a:hover,
+.VPNavBarMenu .menu .item > a:hover,
+.VPNavBarLinks .link:hover {
+  background: #ffffff;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
+}
+.VPNavBar .content .menu .item > a.active,
+.VPNavBarMenu .menu .item > a.active {
+  background: #ffffff;
+  border: 1px dashed var(--card-border);
+}
+
+/* DocSearch button styled like a small sticky tab */
+.DocSearch-Button {
+  color: var(--ink) !important;
+  background: #fff !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06) !important;
+}
+
+/*****************************************
+ Notebook-styled Sidebar
+*****************************************/
+.VPSidebar {
+  background: transparent !important;
+  border-right: 0 !important;
+}
+.VPSidebar .group {
+  margin: 10px 8px;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
+}
+.VPSidebar .group .title {
+  color: var(--ink) !important;
+  font-weight: 700;
+}
+.VPSidebar .group .items .item .link,
+.VPSidebarItem .link,
+.VPSidebarItem .text {
+  color: var(--ink) !important;
+}
+.VPSidebar a {
+  color: var(--ink) !important;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+.VPSidebar a:hover {
+  background: #ffffff;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+}
+.VPSidebar .is-active > a,
+.VPSidebar a.active {
+  background: #ffffff;
+  border: 1px dashed var(--card-border);
+}
+
+/*****************************************
+ Homepage and cards
+*****************************************/
+.VPHome .VPHero,
+.VPHome .VPHomeFeatures .item,
+.VPDoc .custom-block,
+.VPDoc .tip,
+.VPDoc .warning {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
+}
+
+/*****************************************
+ Layout spacing to account for holes and margin line
+*****************************************/
+@media (min-width: 960px) {
+  .VPContent.has-sidebar {
+    padding-left: 8px; /* small nudge so content card clears holes */
+  }
+}
+
+/*****************************************
+ Fine-tune links and hr to match ink
+*****************************************/
+.vp-doc hr {
+  border-color: var(--card-border);
+}
+.vp-doc strong, .vp-doc b {
+  color: var(--ink);
+}
+
+/*****************************************
+ Code block tone tweaks
+*****************************************/
+.vp-doc pre code {
+  color: var(--ink);
+}
