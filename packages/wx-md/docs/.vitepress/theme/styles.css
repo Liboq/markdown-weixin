@@ -1,0 +1,82 @@
+:root {
+  --paper-bg: #F5F1E8; /* 米色 */
+  --ink: #3D2914; /* 深棕 */
+  --margin-red: rgba(252, 165, 165, 0.6);
+  --guide-blue: rgba(147, 197, 253, 0.4);
+  --card-border: #CCCCCC;
+}
+
+html, body {
+  background-color: var(--paper-bg);
+  color: var(--ink);
+}
+
+/* Notebook blue guide lines */
+body::before {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(147, 197, 253, 0.0) 0px,
+      rgba(147, 197, 253, 0.0) 29px,
+      var(--guide-blue) 30px,
+      rgba(147, 197, 253, 0.0) 31px
+    );
+  pointer-events: none;
+}
+
+/* Keep content above decorations */
+#app, .Layout, .VPContent, .VPDoc {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make nav subtle to let paper show through */
+.VPNav {
+  background: transparent !important;
+}
+
+/* Content card */
+.VPDoc .vp-doc {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--ink);
+}
+
+/*****************************************
+ Typography tweaks
+*****************************************/
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4, .vp-doc h5, .vp-doc h6 {
+  color: var(--ink);
+}
+.vp-doc a { color: #2b5e9f; }
+.vp-doc a:hover { color: #1e3f6a; }
+
+/* Code blocks get a hand-drawn frame vibe */
+.vp-doc pre {
+  border: 1px dashed #bcbcbc;
+  background: #fffefb;
+}
+.vp-doc code {
+  color: #3d2914;
+}
+
+/* Tables and blockquotes */
+.vp-doc table { border-color: var(--card-border); }
+.vp-doc blockquote {
+  border-left: 4px solid var(--margin-red);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive tweaks: hide busy decorations on small screens via component CSS */
+@media (max-width: 640px) {
+  .VPDoc .vp-doc {
+    padding: 18px;
+    border-radius: 10px;
+  }
+}
