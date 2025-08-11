@@ -23,15 +23,17 @@
   z-index: 0;
 }
 
+/* Keep the red margin a bit inside to coexist with the sidebar */
 .notebook-decor__red-margin {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 72px;
+  left: 72px; /* aligns with typical content gutter */
   width: 2px;
-  background: rgba(252, 165, 165, 0.6);
+  background: var(--margin-red);
 }
 
+/* 8 punched holes */
 .notebook-decor__holes {
   position: absolute;
   left: 24px;
@@ -52,6 +54,7 @@
   margin: 12px 0;
 }
 
+/* A small doodle for the hand-drawn vibe */
 .notebook-decor__doodle {
   position: absolute;
   right: 24px;
