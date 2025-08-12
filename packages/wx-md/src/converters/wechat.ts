@@ -13,10 +13,16 @@ import rehypeWeChatCompatible from './rehype-wechat.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import type { RenderOptions, RenderResult, PageTheme, TypographyTheme, CodeTheme } from '../index.js';
 
-const pkgRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
+// Resolve package root in both ESM and CJS outputs
+const currentDir = typeof __dirname !== 'undefined'
+  ? __dirname
+  : path.dirname(fileURLToPath(import.meta.url));
+// From dist/converters back to package root
+const pkgRoot = path.resolve(currentDir, '..');
 
 function loadCss(relPath: string): string {
   const p = path.join(pkgRoot, 'src', relPath);
@@ -66,6 +72,13 @@ export async function renderWeChatHtml(markdown: string, options: RenderOptions 
   const pageTheme = options.pageTheme ?? 'wide';
   const typographyTheme = options.typographyTheme ?? 'mo-di';
   const codeTheme = options.codeTheme ?? 'tomorrow-night-eighties';
+  const useInlineStyles = options.inlineStyles ?? false;
+
+  const css = [
+    getPageCss(pageTheme),
+    getTypographyCss(typographyTheme),
+    getCodeCss(codeTheme)
+  ].join('\n\n');
 
   const processor = unified()
     .use(remarkParse)
@@ -77,27 +90,31 @@ export async function renderWeChatHtml(markdown: string, options: RenderOptions 
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
     .use(rehypeHighlight)
-    .use(rehypeWeChatCompatible)
+    .use(rehypeWeChatCompatible, useInlineStyles ? css : undefined)
     .use(rehypeStringify, { allowDangerousHtml: true });
 
   const file = await processor.process(markdown);
   const htmlBody = String(file);
 
-  const css = [
-    getPageCss(pageTheme),
-    getTypographyCss(typographyTheme),
-    getCodeCss(codeTheme)
-  ].join('\n\n');
+  // 如果使用行内样式，不需要包装在 .wxmd-article 中
+  const finalHtml = useInlineStyles ? htmlBody : htmlBody;
 
   if (options.fullHtmlDocument) {
-    const fullHtml = `<!doctype html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n${css}\n</style>\n</head>\n<body>\n<article class=\"wxmd-article\">${htmlBody}</article>\n</body>\n</html>`;
-    return { html: htmlBody, css, fullHtml };
+    const styleSection = useInlineStyles ? '' : `<style>\n${css}\n</style>\n`;
+    const articleWrapper = useInlineStyles ? finalHtml : `<article class="wxmd-article">${finalHtml}</article>`;
+    const fullHtml = `<!doctype html>\n<html>\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n${styleSection}</head>\n<body>\n${articleWrapper}\n</body>\n</html>`;
+    return { html: finalHtml, css, fullHtml };
   }
 
-  if (options.embedCss) {
-    const withStyle = `<style>\n${css}\n</style>\n<article class=\"wxmd-article\">${htmlBody}</article>`;
+  if (options.embedCss && !useInlineStyles) {
+    const withStyle = `<style>\n${css}\n</style>\n<article class="wxmd-article">${finalHtml}</article>`;
     return { html: withStyle, css };
   }
 
-  return { html: htmlBody, css };
+  if (useInlineStyles) {
+    // 行内样式模式下，直接返回带样式的HTML
+    return { html: finalHtml, css };
+  }
+
+  return { html: finalHtml, css };
 }

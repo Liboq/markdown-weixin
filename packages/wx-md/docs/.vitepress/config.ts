@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -18,6 +19,7 @@ export default defineConfig({
           { text: '❓ FAQ', link: '/faq' }
         ]
       },
+      { text: '🚀 在线演示', link: '/demo' },
       { text: 'GitHub', link: 'https://github.com/cnych/markdown-weixin' }
     ],
     sidebar: {
@@ -37,6 +39,7 @@ export default defineConfig({
           text: '🗂️ 文档',
           items: [
             { text: '快速开始', link: '/guide/getting-started' },
+            { text: '在线演示', link: '/demo' },
             { text: 'FAQ', link: '/faq' }
           ]
         }
@@ -46,7 +49,13 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/cnych/markdown-weixin' }],
     footer: { message: 'MIT Licensed', copyright: '© 2025 wx-md' }
   },
+  markdown: {
+    config: (md) => {
+      md.use(demoblockPlugin)
+    }
+  },
   vite: {
+    plugins: [demoblockVitePlugin()],
     server: { port: 5174 }
   }
 })

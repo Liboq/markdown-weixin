@@ -1,0 +1,148 @@
+{
+  "hash": "19f8f179",
+  "configHash": "f667650e",
+  "lockfileHash": "1e691739",
+  "browserHash": "09985392",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "3375610e",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "c1b10bdf",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "66d05019",
+      "needsInterop": false
+    },
+    "unified": {
+      "src": "../../../../node_modules/unified/index.js",
+      "file": "unified.js",
+      "fileHash": "a71c9940",
+      "needsInterop": false
+    },
+    "remark-parse": {
+      "src": "../../../../node_modules/remark-parse/index.js",
+      "file": "remark-parse.js",
+      "fileHash": "4035c17c",
+      "needsInterop": false
+    },
+    "remark-gfm": {
+      "src": "../../../../node_modules/remark-gfm/index.js",
+      "file": "remark-gfm.js",
+      "fileHash": "10043125",
+      "needsInterop": false
+    },
+    "remark-footnotes": {
+      "src": "../../../../node_modules/remark-footnotes/index.js",
+      "file": "remark-footnotes.js",
+      "fileHash": "815ac5a4",
+      "needsInterop": true
+    },
+    "remark-math": {
+      "src": "../../../../node_modules/remark-math/index.js",
+      "file": "remark-math.js",
+      "fileHash": "eb7dc6d7",
+      "needsInterop": false
+    },
+    "remark-rehype": {
+      "src": "../../../../node_modules/remark-rehype/index.js",
+      "file": "remark-rehype.js",
+      "fileHash": "6085e7e4",
+      "needsInterop": false
+    },
+    "rehype-raw": {
+      "src": "../../../../node_modules/rehype-raw/index.js",
+      "file": "rehype-raw.js",
+      "fileHash": "68d257e0",
+      "needsInterop": false
+    },
+    "rehype-stringify": {
+      "src": "../../../../node_modules/rehype-stringify/index.js",
+      "file": "rehype-stringify.js",
+      "fileHash": "51e91685",
+      "needsInterop": false
+    },
+    "rehype-slug": {
+      "src": "../../../../node_modules/rehype-slug/index.js",
+      "file": "rehype-slug.js",
+      "fileHash": "a13b1e5b",
+      "needsInterop": false
+    },
+    "rehype-autolink-headings": {
+      "src": "../../../../node_modules/rehype-autolink-headings/index.js",
+      "file": "rehype-autolink-headings.js",
+      "fileHash": "22fcfe15",
+      "needsInterop": false
+    },
+    "rehype-highlight": {
+      "src": "../../../../node_modules/rehype-highlight/index.js",
+      "file": "rehype-highlight.js",
+      "fileHash": "80b2771a",
+      "needsInterop": false
+    },
+    "unist-util-visit": {
+      "src": "../../../../node_modules/unist-util-visit/index.js",
+      "file": "unist-util-visit.js",
+      "fileHash": "b37866c9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BRMBYMJO": {
+      "file": "chunk-BRMBYMJO.js"
+    },
+    "chunk-4MW7K7OI": {
+      "file": "chunk-4MW7K7OI.js"
+    },
+    "chunk-436ZYYOR": {
+      "file": "chunk-436ZYYOR.js"
+    },
+    "chunk-JTBVVIFX": {
+      "file": "chunk-JTBVVIFX.js"
+    },
+    "chunk-TT26C7CN": {
+      "file": "chunk-TT26C7CN.js"
+    },
+    "chunk-HVR2FF6M": {
+      "file": "chunk-HVR2FF6M.js"
+    },
+    "chunk-FJ7WSWQV": {
+      "file": "chunk-FJ7WSWQV.js"
+    },
+    "chunk-UJMNNW47": {
+      "file": "chunk-UJMNNW47.js"
+    },
+    "chunk-HNR2HPMQ": {
+      "file": "chunk-HNR2HPMQ.js"
+    },
+    "chunk-OWAQV5GP": {
+      "file": "chunk-OWAQV5GP.js"
+    },
+    "chunk-CW6M2CRR": {
+      "file": "chunk-CW6M2CRR.js"
+    },
+    "chunk-I4DUGUK5": {
+      "file": "chunk-I4DUGUK5.js"
+    },
+    "chunk-J6TDPGU4": {
+      "file": "chunk-J6TDPGU4.js"
+    },
+    "chunk-TT67PRVE": {
+      "file": "chunk-TT67PRVE.js"
+    },
+    "chunk-YZTG4UYE": {
+      "file": "chunk-YZTG4UYE.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}

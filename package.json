@@ -4,23 +4,24 @@
   "description": "A online markdown converter specially for Wechat Public formatting.",
   "main": "index.js",
   "scripts": {
+    "docs:build": "cd ./packages/wx-md && num run docs:build ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cnych/markdown-weixin.git"
+    "url": "https://github.com/Liboq/markdown-weixin.git"
   },
   "keywords": [
     "wechat",
     "markdown",
     "format"
   ],
-  "author": "阳明<icnych@gmail.com>",
+  "author": "阳明<iLiboq@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cnych/markdown-weixin/issues"
+    "url": "https://github.com/Liboq/markdown-weixin/issues"
   },
-  "homepage": "https://github.com/cnych/markdown-weixin",
+  "homepage": "https://github.com/Liboq/markdown-weixin",
   "dependencies": {
     "copy-webpack-plugin": "~4.0.1"
   },

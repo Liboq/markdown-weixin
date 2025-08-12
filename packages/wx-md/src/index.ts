@@ -14,6 +14,7 @@ export interface RenderOptions {
   codeTheme?: CodeTheme;
   embedCss?: boolean;
   fullHtmlDocument?: boolean;
+  inlineStyles?: boolean; // 新增：是否使用行内样式（微信公众号模式）
 }
 
 export interface RenderResult {

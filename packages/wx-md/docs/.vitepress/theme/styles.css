@@ -4,6 +4,8 @@
   --margin-red: rgba(252, 165, 165, 0.6);
   --guide-blue: rgba(147, 197, 253, 0.4);
   --card-border: #CCCCCC;
+  --vp-nav-bg-color:none;
+  --vp-sidebar-bg-color:none;
 }
 
 html, body {
@@ -65,7 +67,6 @@ body::before {
 .vp-doc code {
   color: #3d2914;
 }
-
 /* Tables and blockquotes */
 .vp-doc table { border-color: var(--card-border); }
 .vp-doc blockquote {
@@ -93,11 +94,8 @@ body::before {
 }
 .VPNavBarTitle .title {
   color: var(--ink) !important;
-  background: #fff;
-  border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 6px 10px;
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
 }
 .VPNavBar .content .menu .item > a,
 .VPNavBarMenu .menu .item > a,
